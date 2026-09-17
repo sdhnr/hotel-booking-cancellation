@@ -1,6 +1,6 @@
 * text=auto
 *.csv -text
-*.ipynb text eol=lf
+*.ipynb -text
 *.md text eol=lf
 *.png binary
 *.pdf binary
