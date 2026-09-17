@@ -1,0 +1,5 @@
+output_name,saved_file_found,row_count_match,column_count_match,column_order_match,content_match,result
+cleaned,True,True,True,True,True,PASS
+rejected,True,True,True,True,True,PASS
+model_ready,True,True,True,True,True,PASS
+powerbi,True,True,True,True,True,PASS

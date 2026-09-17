@@ -1,0 +1,5 @@
+risk_band,recommended_action,booking_count,total_booking_value,total_revenue_at_risk,average_cancel_probability
+High,Retention Offer,1962,1246723.22,960150.18,0.7696
+Low,Monitor,13974,6916890.7,1533977.03,0.2141
+Very High,Request Deposit,3267,1508455.88,1443192.02,0.9707
+Watch,Watch List,4510,2433800.62,1479268.43,0.6055

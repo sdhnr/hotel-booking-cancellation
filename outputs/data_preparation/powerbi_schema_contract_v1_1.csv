@@ -1,0 +1,41 @@
+schema_version,schema_lock_date,schema_order,column_name,power_bi_data_type,availability,allowed_values_or_formula,definition
+1.1,2026-09-17,1,schema_version,Text,Available after data preparation,1.1,Version number of the Python-to-Power-BI schema.
+1.1,2026-09-17,2,booking_id,Text,Available after data preparation,"118,563 distinct values",Synthetic unique identifier assigned to each row for traceability.
+1.1,2026-09-17,3,arrival_date,Date,Available after data preparation,2015-07-01 to 2017-08-31; format YYYY-MM-DD,Complete scheduled arrival date created from the source date fields.
+1.1,2026-09-17,4,arrival_year_month,Text,Available after data preparation,26 distinct values,Scheduled arrival month formatted as YYYY-MM.
+1.1,2026-09-17,5,arrival_quarter,Text,Available after data preparation,"Q1, Q2, Q3, Q4",Scheduled arrival quarter from Q1 through Q4.
+1.1,2026-09-17,6,arrival_season,Text,Available after data preparation,"Fall, Spring, Summer, Winter","Scheduled arrival season: Winter, Spring, Summer, or Fall."
+1.1,2026-09-17,7,hotel,Text,Available after data preparation,"City Hotel, Resort Hotel",Hotel type: City Hotel or Resort Hotel.
+1.1,2026-09-17,8,is_canceled,Whole number,Available after data preparation,0.00 to 1.00,Cancellation outcome; 1 means canceled and 0 means not canceled.
+1.1,2026-09-17,9,lead_time,Whole number,Available after data preparation,0.00 to 709.00,Number of days between booking entry and scheduled arrival.
+1.1,2026-09-17,10,lead_time_group,Text,Available after data preparation,"0-7 days, 181-365 days, 31-90 days, 366+ days, 8-30 days, 91-180 days",Business-friendly grouping of the number of days before arrival.
+1.1,2026-09-17,11,total_nights,Whole number,Available after data preparation,1.00 to 69.00,Total nights calculated as weekend nights plus weekday nights.
+1.1,2026-09-17,12,total_guests,Whole number,Available after data preparation,1.00 to 55.00,Total guests calculated as adults plus children plus babies.
+1.1,2026-09-17,13,adults,Whole number,Available after data preparation,0.00 to 55.00,Number of adults included in the booking.
+1.1,2026-09-17,14,children,Whole number,Available after data preparation,0.00 to 10.00,Number of children included in the booking.
+1.1,2026-09-17,15,babies,Whole number,Available after data preparation,0.00 to 10.00,Number of babies included in the booking.
+1.1,2026-09-17,16,is_family,Whole number,Available after data preparation,0.00 to 1.00,Indicator that the booking includes at least one child or baby.
+1.1,2026-09-17,17,adr,Decimal number,Available after data preparation,0.00 to 510.00,Average daily room rate associated with the booking.
+1.1,2026-09-17,18,adr_group,Text,Available after data preparation,"1-75, 126-200, 201+, 76-125, Zero",Business-friendly grouping of average daily room rate.
+1.1,2026-09-17,19,zero_adr_flag,Whole number,Available after data preparation,0.00 to 1.00,Indicator that the average daily rate is zero.
+1.1,2026-09-17,20,booking_value,Decimal number,Available after data preparation,"0.00 to 7,590.00",Estimated gross room value calculated as ADR multiplied by total nights.
+1.1,2026-09-17,21,country,Text,Available after data preparation,177 distinct values,Guest country code; missing countries are recorded as Unknown.
+1.1,2026-09-17,22,market_segment,Text,Available after data preparation,"Aviation, Complementary, Corporate, Direct, Groups, Offline TA/TO, Online TA, Undefined",Market segment through which the booking was acquired.
+1.1,2026-09-17,23,distribution_channel,Text,Available after data preparation,"Corporate, Direct, GDS, TA/TO, Undefined",Distribution channel used to place the booking.
+1.1,2026-09-17,24,deposit_type,Text,Available after data preparation,"No Deposit, Non Refund, Refundable",Deposit arrangement associated with the booking.
+1.1,2026-09-17,25,customer_type,Text,Available after data preparation,"Contract, Group, Transient, Transient-Party","Customer classification such as Transient, Contract, or Group."
+1.1,2026-09-17,26,reserved_room_type,Text,Available after data preparation,"A, B, C, D, E, F, G, H, L",Code representing the room type originally reserved.
+1.1,2026-09-17,27,assigned_room_type,Text,Available after data preparation,"A, B, C, D, E, F, G, H, I, K, L",Code representing the room type ultimately assigned.
+1.1,2026-09-17,28,room_type_changed,Whole number,Available after data preparation,0.00 to 1.00,Indicator that the assigned room differs from the reserved room.
+1.1,2026-09-17,29,is_repeated_guest,Whole number,Available after data preparation,0.00 to 1.00,Repeat-guest indicator; 1 means repeated guest and 0 means new guest.
+1.1,2026-09-17,30,previous_cancellations,Whole number,Available after data preparation,0.00 to 26.00,Number of previous bookings canceled by the guest.
+1.1,2026-09-17,31,previous_bookings_not_canceled,Whole number,Available after data preparation,0.00 to 72.00,Number of previous bookings not canceled by the guest.
+1.1,2026-09-17,32,has_agent,Whole number,Available after data preparation,0.00 to 1.00,Indicator that an agent identifier was present in the source data.
+1.1,2026-09-17,33,has_company,Whole number,Available after data preparation,0.00 to 1.00,Indicator that a company identifier was present in the source data.
+1.1,2026-09-17,34,required_car_parking_spaces,Whole number,Available after data preparation,0.00 to 8.00,Number of parking spaces requested by the guest.
+1.1,2026-09-17,35,total_of_special_requests,Whole number,Available after data preparation,0.00 to 5.00,Number of special requests made by the guest.
+1.1,2026-09-17,36,cancel_probability,Decimal number,Added after model scoring,Value from 0 to 1,Model-estimated probability that the booking will be canceled.
+1.1,2026-09-17,37,predicted_cancel,Whole number,Added after model scoring,1 when cancel_probability is at least the selected threshold; otherwise 0,Binary cancellation classification generated by the model.
+1.1,2026-09-17,38,risk_band,Text,Added after model scoring,"Low, Watch, High, Very High",Business-friendly cancellation-risk classification.
+1.1,2026-09-17,39,revenue_at_risk,Decimal number,Added after model scoring,booking_value multiplied by cancel_probability,Expected room revenue exposed to cancellation risk.
+1.1,2026-09-17,40,recommended_action,Text,Added after model scoring,"Monitor, Watch List, Retention Offer, Request Deposit",Recommended business response based on cancellation probability.

@@ -1,0 +1,8 @@
+metric,before_cleaning,after_cleaning
+Total records,119390.0,118563.0
+Canceled bookings,44224.0,44175.0
+Not-canceled bookings,75166.0,74388.0
+Cancellation rate,37.041628277075134,37.258672604438146
+Missing values,129425.0,0.0
+Minimum ADR,-6.38,0.0
+Maximum ADR,5400.0,510.0

@@ -1,0 +1,9 @@
+area,finding,preparation_implication
+Dataset size,"118,563 valid records remained after cleaning.",The cleaned dataset retains more than 99% of the source records.
+Target balance,Cancellation rate is 37.26%.,The target is moderately imbalanced but contains sufficient examples of both classes.
+Missing values,0 missing values remain.,The output is complete for Power BI and modeling.
+Lead time,Lead time is right-skewed and includes long booking windows.,Valid large lead-time values are retained and grouped for reporting.
+ADR,ADR is right-skewed; invalid negative and extreme values were removed.,Valid price variation is retained without allowing anomalies to distort revenue calculations.
+Deposit type,Cancellation rates vary substantially by deposit type.,Deposit type is retained as an important business and predictive field.
+Market segment,Cancellation behaviour differs across booking segments.,Market segment is retained for descriptive and predictive analysis.
+Cardinality,"Agent, company, country, and date fields have relatively high cardinality.",Identifier fields are handled carefully and company ID is excluded from modeling.

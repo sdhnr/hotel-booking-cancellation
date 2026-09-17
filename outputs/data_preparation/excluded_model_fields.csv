@@ -1,0 +1,7 @@
+excluded_field,reason
+reservation_status,Directly reveals the final cancellation outcome
+reservation_status_date,Outcome-related date recorded after booking activity
+assigned_room_type,May only be available after room assignment
+booking_changes,Can change after the original booking is created
+days_in_waiting_list,May only be known after booking confirmation
+company,Extremely sparse high-cardinality identifier

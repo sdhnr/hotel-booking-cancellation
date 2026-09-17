@@ -1,0 +1,15 @@
+issue,evidence,decision,reason
+Missing children,4 missing records,Fill with 0,Very small missing count and zero is the dominant value
+Missing country,488 missing records,Replace with Unknown,Preserves usable booking records without inventing a country
+Missing agent,"16,340 missing records",Replace with code 0 and create has_agent flag,Missingness likely represents bookings without an agent
+Missing company,"112,593 missing records",Replace with code 0 and create has_company flag,Missingness likely represents bookings without a company
+Company identifier,94.31% missing,Exclude raw company ID from modeling,Extremely sparse and high-cardinality identifier
+Duplicate-looking records,"31,994 excess rows without a booking ID",Retain records and add synthetic record ID,Identical rows may represent separate group reservations
+Country code CN,"1,279 two-character values while other codes use three characters",Standardize CN to CHN,Maintains a consistent country-code format
+Zero guests,180 records,Remove,A valid hotel booking must contain at least one guest
+Zero nights,715 records with zero ADR,Remove from analysis-ready and model-ready outputs,Does not represent an overnight room booking or room revenue
+Negative ADR,1 record,Remove,Negative room price is not valid for this analysis
+"ADR of 5,400",Single record; next-highest ADR is 510,Remove,Extreme anomaly that would distort revenue calculations
+Zero ADR with positive nights,Some bookings remain after zero-night removal,Retain and create zero_adr_flag,May represent complimentary or special-rate bookings
+Date data types,Dates originally stored across fields or as text,Convert to datetime,"Required for validation, temporal analysis, and Power BI"
+Outcome leakage,Reservation status perfectly reveals is_canceled,Exclude leakage and post-booking fields from modeling,Model must generate predictions before the final outcome

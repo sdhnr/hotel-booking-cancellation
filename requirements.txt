@@ -1,0 +1,8 @@
+# Versions for the original project are only partly recorded.
+# Python 3.11+ recommended; model scores may vary by library version.
+pandas>=1.5,<3
+numpy>=1.23,<3
+matplotlib>=3.7,<4
+scikit-learn>=1.2,<2
+joblib>=1.2,<2
+jupyterlab>=4,<5
